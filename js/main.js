@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initAnimations();
     initVideoBackground();
+    initDailySpecials();
+    initTestimonials();
+    initParallaxEffects();
+    initProgressiveImageLoading();
+    initIntersectionAnimations();
+    initWinePairingFeature();
 });
 
 // Navigation functionality
@@ -50,10 +56,13 @@ function initNavigation() {
         });
     });
 
-    // Enhanced navbar background on scroll
+    // Simple navbar behavior - always visible, just gets thinner on scroll
     window.addEventListener('scroll', () => {
         if (navbar) {
-            if (window.scrollY > 50) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add/remove scrolled class for thinner navbar
+            if (scrollTop > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
@@ -92,7 +101,7 @@ function initMenuSystem() {
                 name: "Artisan Bruschetta",
                 description: "Grilled artisan bread topped with fresh tomatoes, basil, garlic, and balsamic glaze.",
                 price: "$11.99",
-                image: "https://images.unsplash.com/photo-1572441713132-51c75654db73?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5NXVDdK0-gUKxyY7uOdMXYjij0KWMp11kMQ&s"
             }
         ],
         mains: [
@@ -180,9 +189,14 @@ function initMenuSystem() {
             const menuItem = document.createElement('div');
             menuItem.className = 'menu-item';
             menuItem.innerHTML = `
-                <h4>${item.name}</h4>
-                <p>${item.description}</p>
-                <div class="price">${item.price}</div>
+                <div class="menu-item-image">
+                    <img src="${item.image}" alt="${item.name}" loading="lazy" />
+                </div>
+                <div class="menu-item-content">
+                    <h4>${item.name}</h4>
+                    <p>${item.description}</p>
+                    <div class="price">${item.price}</div>
+                </div>
             `;
             menuItemsContainer.appendChild(menuItem);
         });
@@ -514,5 +528,530 @@ window.addEventListener('error', (e) => {
 console.log('%c🍽️ Arthur Street Kitchen + Bar', 'color: #d4af37; font-size: 20px; font-weight: bold;');
 console.log('%cWebsite loaded successfully!', 'color: #1a1a1a; font-size: 14px;');
 
+// Daily Specials functionality
+function initDailySpecials() {
+    const dailySpecials = [
+        {
+            name: "Monday Madness",
+            dish: "BBQ Ribs Platter",
+            description: "Fall-off-the-bone ribs with our signature BBQ sauce, coleslaw, and fries",
+            price: "$19.99",
+            originalPrice: "$24.99",
+            image: "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+        },
+        {
+            name: "Taco Tuesday",
+            dish: "Fish Taco Trio",
+            description: "Three soft shell tacos with beer-battered fish, cabbage slaw, and chipotle mayo",
+            price: "$16.99",
+            originalPrice: "$21.99",
+            image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+        },
+        {
+            name: "Wing Wednesday",
+            dish: "All-You-Can-Eat Wings",
+            description: "Unlimited wings with your choice of sauce, served with celery and blue cheese",
+            price: "$22.99",
+            originalPrice: "$28.99",
+            image: "https://images.unsplash.com/photo-1608039755401-742074f0548d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+        },
+        {
+            name: "Thirsty Thursday",
+            dish: "Steak & Beer Combo",
+            description: "8oz sirloin steak with your choice of local craft beer",
+            price: "$26.99",
+            originalPrice: "$32.99",
+            image: "https://images.unsplash.com/photo-1615937691194-97dbd4d3e4c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+        },
+        {
+            name: "Fish Friday",
+            dish: "Fish & Chips Special",
+            description: "Beer-battered cod with hand-cut fries, mushy peas, and tartar sauce",
+            price: "$17.99",
+            originalPrice: "$22.99",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDdPaHsGnkFVxaUSI9Z33ml0EKZMkIoSavwA&s"
+        },
+        {
+            name: "Saturday Surf & Turf",
+            dish: "Lobster & Steak",
+            description: "6oz filet mignon with lobster tail, garlic butter, and seasonal vegetables",
+            price: "$39.99",
+            originalPrice: "$49.99",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+        },
+        {
+            name: "Sunday Brunch",
+            dish: "Ultimate Brunch Platter",
+            description: "Eggs benedict, bacon, sausage, hash browns, and fresh fruit",
+            price: "$18.99",
+            originalPrice: "$23.99",
+            image: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+        }
+    ];
+
+    function displayDailySpecial() {
+        const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
+        const todaysSpecial = dailySpecials[today];
+        const specialContainer = document.getElementById('daily-special');
+        
+        if (specialContainer && todaysSpecial) {
+            specialContainer.innerHTML = `
+                <div class="special-content">
+                    <div class="special-image">
+                        <img src="${todaysSpecial.image}" alt="${todaysSpecial.dish}" loading="lazy" />
+                    </div>
+                    <div class="special-details">
+                        <span class="special-day">${todaysSpecial.name}</span>
+                        <h4>${todaysSpecial.dish}</h4>
+                        <p>${todaysSpecial.description}</p>
+                        <div class="special-pricing">
+                            <span class="special-price">${todaysSpecial.price}</span>
+                            <span class="original-price">${todaysSpecial.originalPrice}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // Display today's special
+    displayDailySpecial();
+    
+    // Update special at midnight
+    const now = new Date();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    
+    const msUntilMidnight = tomorrow.getTime() - now.getTime();
+    
+    setTimeout(() => {
+        displayDailySpecial();
+        // Then update every 24 hours
+        setInterval(displayDailySpecial, 24 * 60 * 60 * 1000);
+    }, msUntilMidnight);
+}
+
 // Make closeBookingModal globally available
 window.closeBookingModal = closeBookingModal;
+
+// Testimonials Slider
+function initTestimonials() {
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let testimonialInterval;
+
+    function showSlide(index) {
+        // Hide all slides
+        testimonialItems.forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Remove active class from all dots
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Show current slide
+        if (testimonialItems[index]) {
+            testimonialItems[index].classList.add('active');
+        }
+        
+        // Activate current dot
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % testimonialItems.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + testimonialItems.length) % testimonialItems.length;
+        showSlide(currentSlide);
+    }
+
+    function startAutoSlide() {
+        testimonialInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(testimonialInterval);
+    }
+
+    // Event listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+
+    // Pause on hover
+    const testimonialSlider = document.getElementById('testimonials-slider');
+    if (testimonialSlider) {
+        testimonialSlider.addEventListener('mouseenter', stopAutoSlide);
+        testimonialSlider.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    // Initialize
+    if (testimonialItems.length > 0) {
+        showSlide(0);
+        startAutoSlide();
+    }
+}
+
+// Parallax Effects
+function initParallaxEffects() {
+    const parallaxElements = document.querySelectorAll('.hero-background, .testimonials-background, .book-background');
+    
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        parallaxElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.bottom >= 0 && rect.top <= window.innerHeight;
+            
+            if (isVisible) {
+                element.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    }
+
+    // Use requestAnimationFrame for smooth parallax
+    let ticking = false;
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        requestTick();
+        ticking = false;
+    });
+}
+
+// Progressive Image Loading
+function initProgressiveImageLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const placeholder = img.parentElement;
+                
+                // Add loading placeholder
+                placeholder.classList.add('image-placeholder');
+                
+                // Create new image to preload
+                const newImg = new Image();
+                newImg.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.add('image-loaded');
+                    placeholder.classList.remove('image-placeholder');
+                    img.removeAttribute('data-src');
+                };
+                newImg.src = img.dataset.src;
+                
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+// Intersection Observer Animations
+function initIntersectionAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+    
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animatedElements.forEach(element => {
+        animationObserver.observe(element);
+    });
+
+    // Add animation classes to elements
+    document.querySelectorAll('.chef-content .chef-info').forEach(el => {
+        el.classList.add('fade-in-right');
+    });
+    
+    document.querySelectorAll('.chef-content .chef-image').forEach(el => {
+        el.classList.add('fade-in-left');
+    });
+    
+    document.querySelectorAll('.award-item').forEach((el, index) => {
+        el.classList.add('fade-in-up');
+        el.style.animationDelay = `${index * 0.1}s`;
+    });
+    
+    document.querySelectorAll('.about-feature').forEach((el, index) => {
+        el.classList.add('fade-in-up');
+        el.style.animationDelay = `${index * 0.2}s`;
+    });
+}
+
+// Wine Pairing Feature
+function initWinePairingFeature() {
+    const specialtyCards = document.querySelectorAll('.specialty-card[data-wine-pairing="true"]');
+    
+    specialtyCards.forEach(card => {
+        const winePairing = card.querySelector('.wine-pairing');
+        const winePairingHint = card.querySelector('.wine-pairing-hint');
+        
+        if (winePairing && winePairingHint) {
+            // Show wine pairing on hover
+            card.addEventListener('mouseenter', () => {
+                winePairing.style.maxHeight = winePairing.scrollHeight + 'px';
+                winePairingHint.style.opacity = '1';
+                winePairingHint.style.transform = 'translateY(0)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                winePairing.style.maxHeight = '0';
+                winePairingHint.style.opacity = '0';
+                winePairingHint.style.transform = 'translateY(10px)';
+            });
+        }
+    });
+}
+
+// Enhanced Menu Item Interactions
+function initEnhancedMenuInteractions() {
+    const menuItems = document.querySelectorAll('.menu-item');
+    
+    menuItems.forEach(item => {
+        const price = item.querySelector('.price');
+        
+        item.addEventListener('mouseenter', () => {
+            // Add subtle glow effect to price
+            if (price) {
+                price.style.textShadow = '0 0 10px rgba(201, 169, 110, 0.5)';
+                price.style.transform = 'scale(1.05)';
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            if (price) {
+                price.style.textShadow = 'none';
+                price.style.transform = 'scale(1)';
+            }
+        });
+    });
+}
+
+// Lightbox Gallery for Images
+function initLightboxGallery() {
+    const galleryImages = document.querySelectorAll('.about-image-main img, .chef-image img, .specialty-image img');
+    
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            createLightbox(img.src, img.alt);
+        });
+        
+        // Add cursor pointer to indicate clickable
+        img.style.cursor = 'pointer';
+    });
+}
+
+function createLightbox(imageSrc, imageAlt) {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <img src="${imageSrc}" alt="${imageAlt}" />
+            <button class="lightbox-close">&times;</button>
+        </div>
+    `;
+    
+    // Add lightbox styles
+    lightbox.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    const content = lightbox.querySelector('.lightbox-content');
+    content.style.cssText = `
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+    `;
+    
+    const img = lightbox.querySelector('img');
+    img.style.cssText = `
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    `;
+    
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: -40px;
+        right: 0;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+    
+    document.body.appendChild(lightbox);
+    document.body.style.overflow = 'hidden';
+    
+    // Fade in
+    setTimeout(() => {
+        lightbox.style.opacity = '1';
+    }, 10);
+    
+    // Close handlers
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    document.addEventListener('keydown', handleEscapeKey);
+    
+    function closeLightbox() {
+        lightbox.style.opacity = '0';
+        setTimeout(() => {
+            document.body.removeChild(lightbox);
+            document.body.style.overflow = 'auto';
+        }, 300);
+        document.removeEventListener('keydown', handleEscapeKey);
+    }
+    
+    function handleEscapeKey(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    }
+}
+
+// Loading States for Dynamic Content
+function showLoadingState(element) {
+    const loader = document.createElement('div');
+    loader.className = 'loading-spinner';
+    loader.innerHTML = `
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    `;
+    
+    loader.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        color: var(--text-muted);
+    `;
+    
+    const spinner = loader.querySelector('.spinner');
+    spinner.style.cssText = `
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(201, 169, 110, 0.3);
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1rem;
+    `;
+    
+    // Add spinner animation
+    const spinnerCSS = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    
+    if (!document.querySelector('#spinner-styles')) {
+        const style = document.createElement('style');
+        style.id = 'spinner-styles';
+        style.textContent = spinnerCSS;
+        document.head.appendChild(style);
+    }
+    
+    element.innerHTML = '';
+    element.appendChild(loader);
+}
+
+// Initialize enhanced features
+document.addEventListener('DOMContentLoaded', function() {
+    // Add a small delay to ensure all elements are rendered
+    setTimeout(() => {
+        initEnhancedMenuInteractions();
+        initLightboxGallery();
+    }, 100);
+});
+
+// Performance monitoring
+const performanceObserver = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+        if (entry.entryType === 'navigation') {
+            console.log(`Page load time: ${entry.loadEventEnd - entry.loadEventStart}ms`);
+        }
+    }
+});
+
+if ('PerformanceObserver' in window) {
+    performanceObserver.observe({ entryTypes: ['navigation'] });
+}

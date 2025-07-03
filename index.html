@@ -29,6 +29,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#whats-new" class="nav-link">What's New</a></li>
                 <li><a href="#menu" class="nav-link">Menu</a></li>
                 <li><a href="#book" class="nav-link">Book Table</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -84,7 +85,7 @@
                     </div>
                     <p class="about-description">At Arthur Street Kitchen + Bar, we believe that great food brings people together. Our passionate chefs craft each dish with the finest ingredients, creating flavors that celebrate both tradition and innovation.</p>
                     <div class="about-features">
-                        <div class="about-feature">
+                        <div class="about-feature fade-in-up">
                             <div class="feature-icon">
                                 <i class="fas fa-award"></i>
                             </div>
@@ -93,7 +94,7 @@
                                 <p>Recognized for culinary excellence</p>
                             </div>
                         </div>
-                        <div class="about-feature">
+                        <div class="about-feature fade-in-up">
                             <div class="feature-icon">
                                 <i class="fas fa-leaf"></i>
                             </div>
@@ -102,7 +103,7 @@
                                 <p>Locally sourced, daily prepared</p>
                             </div>
                         </div>
-                        <div class="about-feature">
+                        <div class="about-feature fade-in-up">
                             <div class="feature-icon">
                                 <i class="fas fa-users"></i>
                             </div>
@@ -121,6 +122,62 @@
                     <div class="about-image-small">
                         <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Chef Cooking" />
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's New Section -->
+    <section id="whats-new" class="whats-new">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What's New</span>
+                <h2>Latest Updates</h2>
+                <p>Stay updated with our newest offerings and exciting developments</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-item featured">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Winter Menu Items" />
+                        <div class="news-date">Dec 2024</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Winter Menu Launch</h3>
+                        <p>Introducing our seasonal winter menu featuring hearty comfort foods and warming beverages perfect for the cold season.</p>
+                        <a href="#menu" class="news-link">View Menu <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Happy Hour" />
+                        <div class="news-date">Nov 2024</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Extended Happy Hour</h3>
+                        <p>We've extended our happy hour! Join us Monday-Friday 3-6 PM for discounted drinks and appetizers.</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Private Events" />
+                        <div class="news-date">Oct 2024</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Private Event Space</h3>
+                        <p>Our newly renovated private dining room is now available for special occasions and corporate events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Specials Banner -->
+    <section class="daily-specials-banner">
+        <div class="container">
+            <div class="specials-content">
+                <h3>Today's Special</h3>
+                <div class="special-item" id="daily-special">
+                    <!-- Daily special will be loaded dynamically -->
                 </div>
             </div>
         </div>
@@ -154,52 +211,262 @@
                 <h2>Chef's Recommendations</h2>
             </div>
             <div class="specialties-grid">
-                <div class="specialty-card">
+                <div class="specialty-card" data-wine-pairing="true">
                     <div class="specialty-image">
                         <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Gourmet Burger" />
                         <div class="specialty-overlay">
                             <span class="specialty-price">$18.99</span>
                         </div>
+                        <div class="wine-pairing-hint-container">
+                            <div class="wine-pairing-hint">
+                                <i class="fas fa-wine-glass"></i>
+                                <span>Wine Pairing Available</span>
+                            </div>
+                        </div>
+                        <div class="seasonal-indicator spring">
+                            <i class="fas fa-leaf"></i>
+                            <span>Seasonal</span>
+                        </div>
                     </div>
                     <div class="specialty-content">
                         <h3>Arthur Street Burger</h3>
                         <p>Premium beef patty with aged cheddar, crispy bacon, and our signature sauce</p>
+                        <div class="wine-pairing">
+                            <strong>Recommended Pairing:</strong> Cabernet Sauvignon or Local IPA
+                        </div>
                     </div>
                 </div>
-                <div class="specialty-card">
+                <div class="specialty-card" data-wine-pairing="true">
                     <div class="specialty-image">
                         <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Grilled Salmon" />
                         <div class="specialty-overlay">
                             <span class="specialty-price">$24.99</span>
                         </div>
+                        <div class="wine-pairing-hint-container">
+                            <div class="wine-pairing-hint">
+                                <i class="fas fa-wine-glass"></i>
+                                <span>Wine Pairing Available</span>
+                            </div>
+                        </div>
+                        <div class="seasonal-indicator summer">
+                            <i class="fas fa-sun"></i>
+                            <span>Fresh Daily</span>
+                        </div>
                     </div>
                     <div class="specialty-content">
                         <h3>Pan-Seared Salmon</h3>
                         <p>Fresh Atlantic salmon with lemon herb butter and seasonal vegetables</p>
+                        <div class="wine-pairing">
+                            <strong>Recommended Pairing:</strong> Chardonnay or Pinot Grigio
+                        </div>
                     </div>
                 </div>
-                <div class="specialty-card">
+                <div class="specialty-card" data-wine-pairing="true">
                     <div class="specialty-image">
                         <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Chicken Wings" />
                         <div class="specialty-overlay">
                             <span class="specialty-price">$14.99</span>
                         </div>
+                        <div class="wine-pairing-hint-container">
+                            <div class="wine-pairing-hint">
+                                <i class="fas fa-wine-glass"></i>
+                                <span>Wine Pairing Available</span>
+                            </div>
+                        </div>
+                        <div class="seasonal-indicator signature">
+                            <i class="fas fa-star"></i>
+                            <span>Signature</span>
+                        </div>
                     </div>
                     <div class="specialty-content">
                         <h3>Legendary Wings</h3>
                         <p>Award-winning wings with your choice of signature sauces</p>
+                        <div class="wine-pairing">
+                            <strong>Recommended Pairing:</strong> Local IPA or Riesling
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Chef Spotlight Section -->
+    <section class="chef-spotlight">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-image fade-in-left">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Executive Chef" />
+                    <div class="chef-overlay">
+                        <div class="chef-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Every dish tells a story of passion, tradition, and innovation."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chef-info fade-in-right">
+                    <div class="section-header">
+                        <span class="section-subtitle">Meet Our Chef</span>
+                        <h2>Executive Chef Marcus Thompson</h2>
+                    </div>
+                    <div class="chef-bio">
+                        <p>With over 15 years of culinary excellence, Chef Marcus brings a unique blend of classical French techniques and modern Canadian flavors to Arthur Street Kitchen + Bar.</p>
+                        <div class="chef-credentials">
+                            <div class="credential">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Culinary Institute of Canada Graduate</span>
+                            </div>
+                            <div class="credential">
+                                <i class="fas fa-award"></i>
+                                <span>2023 Ontario Chef of the Year Finalist</span>
+                            </div>
+                            <div class="credential">
+                                <i class="fas fa-utensils"></i>
+                                <span>Former Sous Chef at Le Bernardin, NYC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition Section -->
+    <section class="awards-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Recognition</span>
+                <h2>Awards & Accolades</h2>
+                <p>Our commitment to excellence has been recognized by industry leaders and food critics</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-item fade-in-up">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h4>Best Restaurant 2023</h4>
+                    <p>Elmira Chamber of Commerce</p>
+                    <span class="award-year">2023</span>
+                </div>
+                <div class="award-item fade-in-up">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>4.8/5 Stars</h4>
+                    <p>Google Reviews (500+ Reviews)</p>
+                    <span class="award-year">2024</span>
+                </div>
+                <div class="award-item fade-in-up">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4>Excellence in Service</h4>
+                    <p>Ontario Restaurant Association</p>
+                    <span class="award-year">2023</span>
+                </div>
+                <div class="award-item fade-in-up">
+                    <div class="award-icon">
+                        <i class="fas fa-wine-glass"></i>
+                    </div>
+                    <h4>Best Wine Selection</h4>
+                    <p>Waterloo Region Food & Wine</p>
+                    <span class="award-year">2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What Our Guests Say</span>
+                <h2>Testimonials</h2>
+            </div>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"An absolutely exceptional dining experience. The attention to detail in every dish is remarkable, and the service is impeccable. Arthur Street has become our go-to for special occasions."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Sarah & Michael Chen</h5>
+                                <span>Regular Guests</span>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The chef's creativity shines through in every dish. We've dined at restaurants across the country, and Arthur Street consistently delivers an experience that rivals the best in Toronto."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>James Robertson</h5>
+                                <span>Food Critic, Waterloo Region Record</span>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"From our wedding reception to anniversary dinners, Arthur Street has been part of our most cherished moments. The staff treats you like family, and the food is simply outstanding."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Emma & David Wilson</h5>
+                                <span>Celebrating 10 Years</span>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-controls">
+                <button class="testimonial-prev" id="testimonial-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonials-dots" id="testimonials-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="testimonial-next" id="testimonial-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Book Table Section -->
     <section id="book" class="book-table">
-        <div class="book-background">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Restaurant Interior" />
-            <div class="book-overlay"></div>
-        </div>
+        
         <div class="container">
             <div class="book-content">
                 <div class="section-header">
@@ -326,7 +593,7 @@
                         <a href="https://www.instagram.com/arthur_street_kitchen_bar" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" target="_blank">
+                        <a href="https://www.facebook.com/ArthurStreetKitchenBar/" target="_blank">
                             <i class="fab fa-facebook"></i>
                         </a>
                         <a href="#" target="_blank">
