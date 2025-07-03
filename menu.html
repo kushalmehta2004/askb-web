@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Arthur Street Kitchen + Bar</title>
+    <meta name="description" content="Explore our full menu featuring starters, handhelds, mains, desserts and beverages. Fresh ingredients, expertly crafted dishes.">
+    <meta name="keywords" content="menu, restaurant, food, drinks, Arthur Street Kitchen, Elmira dining">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>Arthur Street</h2>
+                    <span>Kitchen + Bar</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#whats-new" class="nav-link">What's New</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="index.html#book" class="nav-link">Book Table</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero Section -->
+    <section class="menu-hero">
+        <div class="menu-hero-background">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Restaurant Menu" />
+            <div class="menu-hero-overlay"></div>
+        </div>
+        <div class="menu-hero-content">
+            <h1 class="menu-hero-title">Our Menu</h1>
+            <p class="menu-hero-subtitle">Discover our carefully crafted dishes made with the finest ingredients</p>
+        </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <section class="menu-navigation">
+        <div class="container">
+            <div class="menu-nav-buttons">
+                <button class="menu-nav-btn active" data-category="starters">
+                    <i class="fas fa-utensils"></i>
+                    <span>Starters</span>
+                </button>
+                <button class="menu-nav-btn" data-category="wings">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span>Wings</span>
+                </button>
+                <button class="menu-nav-btn" data-category="tien-lee">
+                    <i class="fas fa-yin-yang"></i>
+                    <span>Tien Lee</span>
+                </button>
+                <button class="menu-nav-btn" data-category="handhelds">
+                    <i class="fas fa-hamburger"></i>
+                    <span>Handhelds</span>
+                </button>
+                <button class="menu-nav-btn" data-category="bowls-salads">
+                    <i class="fas fa-bowl-food"></i>
+                    <span>Bowls & Salads</span>
+                </button>
+                <button class="menu-nav-btn" data-category="mains">
+                    <i class="fas fa-fish"></i>
+                    <span>Mains</span>
+                </button>
+                <button class="menu-nav-btn" data-category="desserts">
+                    <i class="fas fa-ice-cream"></i>
+                    <span>Desserts</span>
+                </button>
+                <button class="menu-nav-btn" data-category="beverages">
+                    <i class="fas fa-glass-martini-alt"></i>
+                    <span>Beverages</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <!-- Starters Section -->
+            <div class="menu-category-section active" id="starters">
+                <div class="category-header">
+                    <h2>Starters</h2>
+                    <p>Perfect for sharing</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Baja Fish Tacos</h3>
+                            <p>Crispy beer-battered cod in soft tortillas with fresh cabbage slaw, pico de gallo, and zesty chipotle aioli. Served with lime wedges.</p>
+                            <span class="price">$15.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Buffalo Chicken Dip</h3>
+                            <p>Creamy, spicy buffalo chicken dip blended with three cheeses, served hot with crispy tortilla chips and celery sticks for dipping.</p>
+                            <span class="price">$22.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Cauliflower Bites</h3>
+                            <p>Crispy tempura-battered cauliflower florets tossed in your choice of sauce: Buffalo, Sweet Chili, Honey Garlic, or BBQ. Served with ranch dip.</p>
+                            <span class="price">$17.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Full Pan Nachos</h3>
+                            <p>Crispy tortilla chips layered with melted cheese blend, jalapeños, black olives, green onions, diced tomatoes, and served with salsa and sour cream.</p>
+                            <div class="price-options">
+                                <span class="price">Half Pan: $17.99</span>
+                                <span class="price">Full Pan: $23.99</span>
+                                <small>Add Chicken or Beef: $4.99</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Spinach & Artichoke Dip</h3>
+                            <p>Creamy blend of spinach, artichoke hearts, and melted cheeses, topped with parmesan crust and served hot with crispy tortilla chips.</p>
+                            <span class="price">$20.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Poutine</h3>
+                            <p>Classic Canadian comfort food - crispy french fries topped with cheese curds and smothered in rich house-made gravy.</p>
+                            <span class="price">$10.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Feta Bruschetta</h3>
+                            <p>Grilled artisan bread topped with marinated tomatoes, red onion, fresh basil, crumbled feta cheese, and balsamic glaze.</p>
+                            <span class="price">$15.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Chicken Lettuce Wraps</h3>
+                            <p>Wok-seared chicken, water chestnuts, mushrooms, and Asian-inspired sauce, served with crisp lettuce cups, crispy noodles, and hoisin dipping sauce.</p>
+                            <span class="price">$19.89</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>French Onion Soup</h3>
+                            <p>Traditional French onion soup with caramelized onions in rich beef broth, topped with a garlic crouton and melted Swiss cheese.</p>
+                            <span class="price">$10.59</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Butter Chicken Poutine</h3>
+                            <p>A fusion favorite - crispy fries topped with cheese curds, tender chicken pieces, and our signature butter chicken sauce, garnished with cilantro.</p>
+                            <span class="price">$15.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Onion Rings</h3>
+                            <p>Thick-cut sweet onions in a golden beer batter, fried to crispy perfection and served with chipotle aioli dipping sauce.</p>
+                            <span class="price">$9.49</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Loaded Fries</h3>
+                            <p>Crispy french fries topped with melted cheese blend, crispy bacon bits, green onions, and served with sour cream for dipping.</p>
+                            <span class="price">$14.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wings Section -->
+            <div class="menu-category-section" id="wings">
+                <div class="category-header">
+                    <h2>Chicken Wings</h2>
+                    <p>Traditional, NON breaded wings, served with carrots, celery & house blue cheese dressing</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>10 Wings (One Pound)</h3>
+                            <p>Traditional non-breaded wings tossed in your choice of sauce: Mild, Medium, Hot, Honey Garlic, Sweet Chili, BBQ, Lemon Pepper, or Salt & Pepper Dry Rub. Served with blue cheese dressing.</p>
+                            <span class="price">$19.49</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>20 Wings (Two Pounds)</h3>
+                            <p>Perfect for sharing - double the wings, double the flavor. Choose up to two different sauces for this platter. Served with extra blue cheese dressing, carrots, and celery.</p>
+                            <span class="price">$35.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Wing Sauce Options</h3>
+                            <p>Mild • Medium • Hot • Honey Garlic • Sweet Chili • BBQ • Lemon Pepper • Salt & Pepper Dry Rub • Suicide (Extra Hot) • Maple Bacon • Garlic Parmesan</p>
+                            <span class="price">Included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tien Lee Section -->
+            <div class="menu-category-section" id="tien-lee">
+                <div class="category-header">
+                    <h2>Tien Lee</h2>
+                    <p>The famous former restaurant Tien Lee favourites</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Lotus Wontons</h3>
+                            <p>Handcrafted wontons filled with seasoned pork and vegetables, steamed to perfection and served with traditional soy-ginger dipping sauce. A Tien Lee classic!</p>
+                            <span class="price">$12.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Sweet & Sour Chicken</h3>
+                            <p>Crispy battered chicken pieces wok-tossed with bell peppers, onions, and pineapple in Tien Lee's signature sweet and sour sauce. Served with steamed rice.</p>
+                            <span class="price">$16.49</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Spring Rolls</h3>
+                            <p>Authentic vegetable spring rolls filled with cabbage, carrots, mushrooms, and bean sprouts, fried to golden perfection. Served with sweet chili dipping sauce.</p>
+                            <span class="price">$12.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Sesame Chicken</h3>
+                            <p>Tender chicken pieces lightly battered and tossed in Tien Lee's famous sweet sesame glaze, garnished with toasted sesame seeds and green onions. Served with steamed rice.</p>
+                            <span class="price">$16.49</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Handhelds Section -->
+            <div class="menu-category-section" id="handhelds">
+                <div class="category-header">
+                    <h2>Handhelds</h2>
+                    <p>Served with fresh cut fries</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Ultimate Bacon Cheese Burger</h3>
+                            <p>8oz premium Angus beef patty topped with smoked bacon, aged cheddar, Swiss cheese, lettuce, tomato, red onion, and our signature burger sauce on a toasted brioche bun.</p>
+                            <span class="price">$19.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Vegetarian Burger</h3>
+                            <p>Plant-based Beyond Meat® patty with avocado, lettuce, tomato, red onion, and vegan aioli on a toasted whole grain bun. A delicious meat-free option!</p>
+                            <span class="price">$16.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Bigger, Better, Burger</h3>
+                            <p>Our signature 6oz house-made beef patty with lettuce, tomato, pickle, red onion, and Arthur's special sauce on a toasted sesame seed bun. Simple and delicious.</p>
+                            <span class="price">$15.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Rocking Crispy Chicken</h3>
+                            <p>Hand-breaded chicken breast fried to golden perfection, topped with crisp lettuce, tomato, pickle, and spicy mayo on a toasted potato bun. Our most popular sandwich!</p>
+                            <span class="price">$19.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Cod Father</h3>
+                            <p>Beer-battered Atlantic cod fillet with crisp lettuce, tomato, and house-made tartar sauce on a toasted bun. Served with coleslaw and a lemon wedge.</p>
+                            <span class="price">$17.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Buffalo Chicken Caesar Wrap</h3>
+                            <p>Crispy chicken tossed in buffalo sauce with romaine lettuce, bacon bits, parmesan cheese, and creamy caesar dressing wrapped in a warm flour tortilla.</p>
+                            <span class="price">$18.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Chicken Quesadilla</h3>
+                            <p>Grilled flour tortilla stuffed with seasoned chicken, melted cheese blend, sautéed peppers and onions. Served with salsa and sour cream on the side.</p>
+                            <span class="price">$20.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Arthur's Chicken Club</h3>
+                            <p>Triple-decker sandwich with grilled chicken breast, crispy bacon, cheddar cheese, lettuce, tomato, and mayo on your choice of toasted bread.</p>
+                            <span class="price">$19.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bowls & Salads Section -->
+            <div class="menu-category-section" id="bowls-salads">
+                <div class="category-header">
+                    <h2>Bowls & Salads</h2>
+                    <p>Fresh and healthy options</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Fiesta Taco Bowl</h3>
+                            <p>Crispy tortilla bowl filled with seasoned ground beef or chicken, Mexican rice, black beans, corn, shredded cheese, lettuce, pico de gallo, and topped with sour cream, guacamole, and crispy tortilla strips.</p>
+                            <span class="price">$22.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Arthur's Famous Chicken Salad</h3>
+                            <p>Mixed greens topped with grilled chicken breast, avocado, bacon, cherry tomatoes, cucumber, red onion, hard-boiled egg, and crumbled blue cheese. Served with your choice of dressing.</p>
+                            <span class="price">$20.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Grab-A-Greek</h3>
+                            <p>Traditional Greek salad with crisp romaine, cucumber, tomato, red onion, kalamata olives, and feta cheese, tossed in our house-made Greek vinaigrette and served with warm pita bread.</p>
+                            <span class="price">$16.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Elmira Salmon Bowl</h3>
+                            <p>Grilled Atlantic salmon served over a bed of quinoa, roasted sweet potatoes, avocado, cucumber, cherry tomatoes, and mixed greens, drizzled with lemon-dill vinaigrette.</p>
+                            <span class="price">$24.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Cashew Thai Bowl</h3>
+                            <p>Stir-fried vegetables and your choice of chicken or tofu in a spicy Thai sauce, served over jasmine rice and topped with roasted cashews, green onions, and crispy wontons.</p>
+                            <span class="price">$24.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Iceberg Blue Cheese Wedge</h3>
+                            <p>Crisp wedge of iceberg lettuce topped with creamy blue cheese dressing, crumbled bacon, cherry tomatoes, red onion, and blue cheese crumbles. A classic steakhouse favorite!</p>
+                            <span class="price">$15.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mains Section -->
+            <div class="menu-category-section" id="mains">
+                <div class="category-header">
+                    <h2>Mains</h2>
+                    <p>Hearty main courses</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Maple Salmon</h3>
+                            <p>8oz Atlantic salmon fillet glazed with pure Canadian maple syrup and grainy mustard, served with roasted seasonal vegetables and your choice of potato or rice pilaf.</p>
+                            <span class="price">$27.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>AAA New York Steak Dinner</h3>
+                            <p>10oz AAA Canadian beef striploin grilled to your preference, topped with herb butter and served with seasonal vegetables and your choice of potato or rice pilaf.</p>
+                            <span class="price">$34.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Portobello Veg Steak</h3>
+                            <p>Marinated and grilled portobello mushroom caps topped with roasted red peppers, caramelized onions, and goat cheese. Served with seasonal vegetables and quinoa pilaf.</p>
+                            <span class="price">$23.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Butter Chicken</h3>
+                            <p>Tender pieces of chicken breast simmered in our house-made creamy tomato and aromatic spice sauce. Served with basmati rice, naan bread, and mango chutney.</p>
+                            <span class="price">$21.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Mushroom Chicken</h3>
+                            <p>Pan-seared chicken breast topped with a rich wild mushroom and white wine cream sauce. Served with roasted garlic mashed potatoes and seasonal vegetables.</p>
+                            <span class="price">$26.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Chicken Fingers</h3>
+                            <p>Hand-breaded chicken tenders fried to golden perfection, served with fresh-cut fries, house-made coleslaw, and your choice of plum, BBQ, or honey mustard sauce.</p>
+                            <span class="price">$19.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Cod Fish & Chips</h3>
+                            <p>Two pieces of beer-battered Atlantic cod served with fresh-cut fries, house-made coleslaw, tartar sauce, and a lemon wedge. Add an extra piece of fish for $5.99.</p>
+                            <span class="price">$17.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Wicked Chicken Parmesan</h3>
+                            <p>Panko-crusted chicken breast topped with marinara sauce, melted mozzarella and parmesan cheese. Served with fettuccine in garlic butter sauce and garlic bread.</p>
+                            <span class="price">$26.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Chicken Wing Dinner</h3>
+                            <p>One pound of our famous wings with your choice of sauce, served with fresh-cut fries, house-made coleslaw, and blue cheese dipping sauce.</p>
+                            <span class="price">$24.99</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Spaghetti Carbonara</h3>
+                            <p>Al dente spaghetti tossed in a creamy sauce with pancetta, egg, black pepper, and parmesan cheese. Served with garlic bread and a side Caesar salad.</p>
+                            <span class="price">$20.59</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Woolwich Ribs</h3>
+                            <p>Fall-off-the-bone pork back ribs slow-cooked and basted with our signature BBQ sauce. Served with fresh-cut fries and house-made coleslaw.</p>
+                            <div class="price-options">
+                                <span class="price">Half Rack: $22.99</span>
+                                <span class="price">Full Rack: $29.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Ribs & Wings</h3>
+                            <p>The perfect combo - half rack of our signature ribs and half pound of wings with your choice of sauce. Served with fresh-cut fries and house-made coleslaw.</p>
+                            <span class="price">$30.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts Section -->
+            <div class="menu-category-section" id="desserts">
+                <div class="category-header">
+                    <h2>Desserts</h2>
+                    <p>The best way to finish the meal</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Colossal Carrot Cake</h3>
+                            <p>Three layers of moist carrot cake filled with walnuts, pineapple, and raisins, topped with rich cream cheese frosting and a drizzle of caramel sauce.</p>
+                            <span class="price">$8.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Oreo Cheesecake</h3>
+                            <p>Creamy New York style cheesecake with an Oreo cookie crust, topped with chocolate ganache, whipped cream, and Oreo cookie crumbles.</p>
+                            <span class="price">$8.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Warm Brownie Bowl</h3>
+                            <p>Freshly baked chocolate brownie served warm in a bowl, topped with vanilla ice cream, hot fudge sauce, whipped cream, and a cherry.</p>
+                            <span class="price">$9.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Baked Apple Crumble</h3>
+                            <p>Warm spiced apples topped with a buttery oat and brown sugar crumble, served with vanilla ice cream and a drizzle of caramel sauce.</p>
+                            <span class="price">$9.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Chocolate Lava Cake</h3>
+                            <p>Decadent chocolate cake with a warm, molten chocolate center, dusted with powdered sugar and served with vanilla ice cream.</p>
+                            <span class="price">$9.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>New York Cheesecake</h3>
+                            <p>Classic New York style cheesecake with a graham cracker crust, served with your choice of strawberry, caramel, or chocolate sauce.</p>
+                            <span class="price">$8.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Beverages Section -->
+            <div class="menu-category-section" id="beverages">
+                <div class="category-header">
+                    <h2>Beverages</h2>
+                    <p>Refreshing drinks to complement your meal</p>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Craft Beer Selection</h3>
+                            <p>Rotating selection of local craft beers. Ask your server about our current offerings on tap and in bottles.</p>
+                            <div class="price-options">
+                                <span class="price">Draft Pint: $7.50</span>
+                                <span class="price">Bottle: $6.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Signature Cocktails</h3>
+                            <p>Our bartenders' creative concoctions featuring premium spirits and fresh ingredients. Try our famous Arthur Street Old Fashioned or Maple Bourbon Sour.</p>
+                            <span class="price">$12.00 - $15.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card featured">
+                        <div class="menu-item-info">
+                            <h3>Wine Selection</h3>
+                            <p>Carefully curated selection of red, white, and sparkling wines from local and international vineyards. Available by the glass or bottle.</p>
+                            <div class="price-options">
+                                <span class="price">Glass: $8.00 - $12.00</span>
+                                <span class="price">Bottle: $32.00 - $65.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Specialty Coffee</h3>
+                            <p>Freshly brewed coffee, espresso, cappuccino, latte, and more. Add a shot of flavored syrup for $0.75.</p>
+                            <span class="price">$3.50 - $5.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Artisan Tea Selection</h3>
+                            <p>Premium loose leaf teas including Earl Grey, English Breakfast, Green Tea, Chamomile, and seasonal varieties.</p>
+                            <span class="price">$3.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Soft Drinks</h3>
+                            <p>Coca-Cola, Diet Coke, Sprite, Ginger Ale, Iced Tea, and Lemonade with free refills.</p>
+                            <span class="price">$3.25</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Fresh Juice</h3>
+                            <p>Freshly squeezed orange, apple, or grapefruit juice.</p>
+                            <span class="price">$4.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-info">
+                            <h3>Mocktails</h3>
+                            <p>Non-alcoholic cocktails made with fresh juices, herbs, and house-made syrups. Try our Virgin Mojito or Strawberry Basil Lemonade.</p>
+                            <span class="price">$6.50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="menu-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Our Menu?</h2>
+                <p>Book your table today and taste the difference</p>
+                <a href="index.html#book" class="btn btn-primary">Book Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Arthur Street</h3>
+                        <span>Kitchen + Bar</span>
+                    </div>
+                    <p>Experience culinary excellence in the heart of Elmira.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#book">Book Table</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Arthur Street, Elmira, ON</p>
+                    <p><i class="fas fa-phone"></i> (519) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@arthurstreetkitchen.ca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Arthur Street Kitchen + Bar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

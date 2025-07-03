@@ -29,8 +29,8 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#whats-new" class="nav-link">What's New</a></li>
-                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <!-- <li><a href="#whats-new" class="nav-link">What's New</a></li> -->
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
                 <li><a href="#book" class="nav-link">Book Table</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -62,7 +62,7 @@
                 <h2 class="hero-subtitle">Kitchen + Bar</h2>
                 <p class="hero-description">Experience culinary excellence in the heart of Elmira. Where every dish tells a story of passion, quality, and unforgettable flavors.</p>
                 <div class="hero-buttons">
-                    <a href="#menu" class="btn btn-primary">Our Menu</a>
+                    <a href="menu.html" class="btn btn-primary">Our Menu</a>
                     <a href="#book" class="btn btn-secondary">Book Table</a>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#menu" class="btn btn-outline">Explore Menu</a>
+                    <a href="menu.html" class="btn btn-outline">Explore Menu</a>
                 </div>
                 <div class="about-images">
                     <div class="about-image-main">
@@ -144,7 +144,7 @@
                     <div class="news-content">
                         <h3>Winter Menu Launch</h3>
                         <p>Introducing our seasonal winter menu featuring hearty comfort foods and warming beverages perfect for the cold season.</p>
-                        <a href="#menu" class="news-link">View Menu <i class="fas fa-arrow-right"></i></a>
+                        <a href="menu.html" class="news-link">View Menu <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="news-item">
@@ -183,22 +183,68 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu">
+    <!-- Menu Preview Section -->
+    <section id="menu" class="menu-preview">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Food Menu</span>
-                <h2>Our Delicious Menu</h2>
-                <p>Discover our carefully crafted dishes made with the finest ingredients</p>
+                <span class="section-subtitle">Menu Highlights</span>
+                <h2>Our Bestsellers</h2>
+                <p>Get a taste of our most popular dishes</p>
             </div>
-            <div class="menu-categories">
-                <button class="menu-category active" data-category="appetizers">Appetizers</button>
-                <button class="menu-category" data-category="mains">Main Course</button>
-                <button class="menu-category" data-category="desserts">Desserts</button>
-                <button class="menu-category" data-category="drinks">Beverages</button>
+
+            <!-- Bestsellers -->
+            <div class="bestsellers-section">
+                <div class="bestsellers-grid">
+                    <div class="bestseller-item">
+                        <div class="bestseller-image">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Arthur Street Burger" />
+                            <div class="bestseller-badge">
+                                <i class="fas fa-fire"></i>
+                                <span>Hot</span>
+                            </div>
+                        </div>
+                        <div class="bestseller-content">
+                            <h4>Arthur Street Burger</h4>
+                            <p>Our signature burger with premium beef and special sauce</p>
+                            <span class="price">$19.99</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bestseller-item">
+                        <div class="bestseller-image">
+                            <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Legendary Wings" />
+                            <div class="bestseller-badge">
+                                <i class="fas fa-crown"></i>
+                                <span>#1</span>
+                            </div>
+                        </div>
+                        <div class="bestseller-content">
+                            <h4>Legendary Wings</h4>
+                            <p>Award-winning wings with your choice of signature sauces</p>
+                            <span class="price">$19.49</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bestseller-item">
+                        <div class="bestseller-image">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="AAA Steak" />
+                            <div class="bestseller-badge">
+                                <i class="fas fa-medal"></i>
+                                <span>Premium</span>
+                            </div>
+                        </div>
+                        <div class="bestseller-content">
+                            <h4>AAA New York Steak</h4>
+                            <p>Premium AAA steak grilled to perfection</p>
+                            <span class="price">$34.99</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="menu-items" id="menu-items">
-                <!-- Menu items will be loaded dynamically -->
+
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+                <a href="#book" class="btn btn-outline">Book Your Table</a>
             </div>
         </div>
     </section>
