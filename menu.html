@@ -14,10 +14,14 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome CDN (latest) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/interactive-enhancements.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -46,10 +50,11 @@
     </nav>
 
     <!-- Menu Hero Section -->
-    <section class="menu-hero">
-        <div class="menu-hero-background">
+    <section class="menu-hero parallax">
+        <div class="menu-hero-background parallax-layer parallax" data-speed="0.5">
             <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Restaurant Menu" />
-            <div class="menu-hero-overlay"></div>
+            <div class="menu-hero-overlay enhanced"></div>
+            <div class="gradient-overlay animated"></div>
         </div>
         <div class="menu-hero-content">
             <h1 class="menu-hero-title">Our Menu</h1>
@@ -78,7 +83,7 @@
                     <span>Handhelds</span>
                 </button>
                 <button class="menu-nav-btn" data-category="bowls-salads">
-                    <i class="fas fa-bowl-food"></i>
+                    <i class="fa-solid fa-bowl-food"></i>
                     <span>Bowls & Salads</span>
                 </button>
                 <button class="menu-nav-btn" data-category="mains">
@@ -655,5 +660,6 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/interactive-enhancements.js"></script>
 </body>
 </html>

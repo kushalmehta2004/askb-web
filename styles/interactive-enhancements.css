@@ -1,0 +1,711 @@
+/* Interactive Elements and Modern Design Enhancements */
+/* Arthur Street Kitchen + Bar - Enhanced Interactive Features */
+
+/* Integration with existing styles */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --animation-duration: 0.6s;
+    --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-elevated: 0 20px 40px rgba(44, 24, 16, 0.15);
+    --shadow-floating: 0 30px 60px rgba(44, 24, 16, 0.2);
+}
+
+/* Override any potential alignment issues */
+.hero-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.hero-text {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Ensure menu hero content is properly centered */
+.menu-hero-content {
+    display: block !important;
+    text-align: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.menu-hero-title {
+    font-size: 4rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: 300 !important;
+    font-family: 'Cormorant Garamond', serif !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.menu-hero-subtitle {
+    font-size: 1.2rem !important;
+    opacity: 0.9 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure menu hero content is always centered */
+.menu-hero.parallax .menu-hero-content {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    padding: 0 2rem !important;
+    text-align: center !important;
+    color: var(--text-light) !important;
+    z-index: 10 !important;
+}
+
+/* Ensure menu sections don't jump around */
+.menu-category-section {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-category-section.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =====================================================
+   PARALLAX EFFECTS
+   ===================================================== */
+
+/* Parallax containers */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.parallax-layer {
+    will-change: transform;
+}
+
+.parallax-layer.slow {
+    transform: translateZ(-1px) scale(2);
+}
+
+.parallax-layer.medium {
+    transform: translateZ(-0.5px) scale(1.5);
+}
+
+.parallax-layer.fast {
+    transform: translateZ(0);
+}
+
+/* Override existing parallax layer positioning to prevent misalignment */
+.hero .parallax-layer,
+.menu-hero .parallax-layer {
+    position: relative;
+}
+
+.hero .parallax-layer[data-speed] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-hero .parallax-layer[data-speed] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure menu hero content stays centered */
+.menu-hero .menu-hero-content {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Enhanced hero with parallax - Simplified for better alignment */
+.hero.parallax {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero.parallax .hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.hero.parallax .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* Slightly larger for parallax effect */
+    z-index: -1;
+}
+
+/* Menu hero parallax - Fixed alignment */
+.menu-hero.parallax {
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.menu-hero.parallax .menu-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: var(--text-light);
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.menu-hero.parallax .menu-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* Slightly larger for parallax effect */
+    z-index: -1;
+}
+
+/* =====================================================
+   GLASS-MORPHISM EFFECTS
+   ===================================================== */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+}
+
+.glass-card.dark {
+    background: rgba(44, 24, 16, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+/* Enhanced menu item cards with glass-morphism */
+.menu-item-card.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(44, 24, 16, 0.1);
+}
+
+.menu-item-card.glass:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(44, 24, 16, 0.2);
+}
+
+/* Navigation glass effect */
+.navbar.glass {
+    background: rgba(248, 246, 240, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+.navbar.glass:hover {
+    background: rgba(248, 246, 240, 0.95);
+}
+
+/* =====================================================
+   GRADIENT OVERLAYS
+   ===================================================== */
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(201, 169, 110, 0.1) 0%,
+        rgba(44, 24, 16, 0.1) 50%,
+        rgba(201, 169, 110, 0.05) 100%);
+    pointer-events: none;
+}
+
+.gradient-overlay.animated {
+    background: linear-gradient(135deg, 
+        rgba(201, 169, 110, 0.1) 0%,
+        rgba(44, 24, 16, 0.1) 50%,
+        rgba(201, 169, 110, 0.05) 100%);
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Enhanced hero gradient */
+.hero-overlay.enhanced {
+    background: linear-gradient(135deg, 
+        rgba(44, 24, 16, 0.7) 0%,
+        rgba(201, 169, 110, 0.1) 30%,
+        rgba(44, 24, 16, 0.5) 70%,
+        rgba(44, 24, 16, 0.8) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+}
+
+/* =====================================================
+   MICRO-ANIMATIONS
+   ===================================================== */
+
+/* Button micro-animations */
+.btn.micro-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn.micro-animated::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn.micro-animated:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn.micro-animated:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(44, 24, 16, 0.3);
+}
+
+.btn.micro-animated:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Icon micro-animations */
+.icon-animated {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-animated:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 5px 15px rgba(201, 169, 110, 0.5));
+}
+
+.icon-bounce {
+    animation: iconBounce 2s infinite;
+}
+
+@keyframes iconBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Menu navigation button enhancements */
+.menu-nav-btn.enhanced {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-nav-btn.enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent);
+    transition: left 0.6s;
+}
+
+.menu-nav-btn.enhanced:hover::before {
+    left: 100%;
+}
+
+.menu-nav-btn.enhanced:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(201, 169, 110, 0.4);
+}
+
+.menu-nav-btn.enhanced.active {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
+}
+
+/* =====================================================
+   LOADING ANIMATIONS
+   ===================================================== */
+
+/* Fade-in animations for content */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Staggered animations */
+.stagger-animation {
+    animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+/* Loading spinner enhanced */
+.loading-spinner.enhanced {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(201, 169, 110, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+.loading-spinner.enhanced::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(201, 169, 110, 0.5);
+    border-radius: 50%;
+    border-top: 2px solid var(--primary-color);
+    animation: spin 0.5s linear infinite reverse;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =====================================================
+   INTERACTIVE MENU CATEGORIES - Fixed Overlapping
+   ===================================================== */
+
+/* Fixed menu navigation positioning */
+.menu-navigation {
+    position: sticky;
+    top: 90px; /* Increased to prevent overlap */
+    z-index: 100;
+    background: rgba(250, 248, 242, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+    box-shadow: 0 4px 20px rgba(44, 24, 16, 0.1);
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+}
+
+/* Enhanced category filtering */
+.menu-category-transition {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-category-section {
+    padding-top: 2rem; /* Add padding to prevent overlap */
+    min-height: 400px; /* Ensure minimum height */
+}
+
+.menu-category-section.slide-in {
+    animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-category-section.slide-out {
+    animation: slideOutToLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+/* Fix menu content positioning */
+.menu-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 0;
+}
+
+/* Ensure proper spacing for menu items */
+.menu-items-grid {
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.menu-item-card {
+    position: relative;
+    z-index: 1;
+}
+
+/* Prevent content jumping during transitions */
+.menu-category-section {
+    min-height: 500px;
+}
+
+.menu-category-section.active {
+    min-height: auto;
+}
+
+/* Menu item hover effects */
+.menu-item-card.enhanced {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.menu-item-card.enhanced:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(44, 24, 16, 0.2);
+}
+
+.menu-item-card.enhanced:hover .menu-item-info h3 {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.menu-item-card.enhanced:hover .price {
+    transform: scale(1.1);
+    font-weight: 700;
+}
+
+/* =====================================================
+   IMAGE GALLERY STYLES - REMOVED
+   ===================================================== */
+
+/* Gallery styles have been removed to clean up the page */
+
+/* =====================================================
+   SCROLL-TRIGGERED ANIMATIONS
+   ===================================================== */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal.from-left {
+    transform: translateX(-50px);
+}
+
+.scroll-reveal.from-right {
+    transform: translateX(50px);
+}
+
+.scroll-reveal.from-left.revealed,
+.scroll-reveal.from-right.revealed {
+    transform: translateX(0);
+}
+
+/* =====================================================
+   RESPONSIVE ENHANCEMENTS
+   ===================================================== */
+
+@media (max-width: 768px) {
+    /* Disable parallax on mobile for better performance and alignment */
+    .parallax-layer {
+        transform: none !important;
+        position: relative !important;
+    }
+    
+    .hero.parallax,
+    .menu-hero.parallax {
+        perspective: none;
+        transform-style: initial;
+    }
+    
+    .hero.parallax .hero-content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .menu-hero.parallax .menu-hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        color: var(--text-light);
+        max-width: 800px;
+        padding: 0 2rem;
+    }
+    
+    .hero.parallax .hero-background,
+    .menu-hero.parallax .menu-hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: none !important;
+    }
+    
+    .menu-hero.parallax {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu-navigation {
+        top: 70px;
+        position: sticky;
+    }
+    
+    .menu-category-section {
+        padding-top: 1rem;
+    }
+    
+    .menu-item-card.enhanced:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .btn.micro-animated:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+    
+    .glass-card {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .parallax-layer {
+        transform: none !important;
+    }
+}
+
+/* Focus indicators */
+.btn:focus-visible,
+.menu-nav-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid var(--primary-color);
+    }
+    
+    .gradient-overlay {
+        display: none;
+    }
+}

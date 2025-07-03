@@ -17,6 +17,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/interactive-enhancements.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -43,20 +44,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
+    <section id="home" class="hero parallax">
+        <div class="hero-background parallax-layer" data-speed="0.5">
             <div class="hero-video">
                 <video autoplay muted loop playsinline>
                     <source src="https://player.vimeo.com/external/342571552.hd.mp4?s=6c9d4b7b4b7b4b7b4b7b4b7b4b7b4b7b4b7b4b7b&profile_id=175" type="video/mp4">
                     <source src="https://cdn.pixabay.com/video/2015/08/10/267-135875613_large.mp4" type="video/mp4">
                 </video>
-                <div class="hero-overlay"></div>
+                <div class="hero-overlay enhanced"></div>
+                <div class="gradient-overlay animated"></div>
             </div>
             <div class="hero-image-fallback">
                 <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Restaurant Interior" />
             </div>
         </div>
-        <div class="hero-content">
+        <div class="hero-content parallax-layer" data-speed="0.2">
             <div class="hero-text">
                 <h1 class="hero-title">Welcome to Arthur Street</h1>
                 <h2 class="hero-subtitle">Kitchen + Bar</h2>
@@ -682,5 +684,6 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/interactive-enhancements.js"></script>
 </body>
 </html>

@@ -21,9 +21,17 @@ function initMenuNavigation() {
             // Add active class to clicked button
             button.classList.add('active');
             
-            // Hide all menu sections
+            // Hide all menu sections and reset animations
             menuSections.forEach(section => {
                 section.classList.remove('active');
+                // Reset animation state for all items
+                const items = section.querySelectorAll('.menu-item-card');
+                items.forEach(item => {
+                    item.classList.remove('animated');
+                    item.style.opacity = '';
+                    item.style.transform = '';
+                    item.style.transition = '';
+                });
             });
             
             // Show target section with animation
@@ -42,13 +50,13 @@ function initMenuNavigation() {
                     targetSection.classList.remove('loading');
                     targetSection.classList.add('active');
                     
-                    // Smooth scroll to section
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    // Don't scroll - just activate the section to prevent jumping
+                    // targetSection.scrollIntoView({
+                    //     behavior: 'smooth',
+                    //     block: 'start'
+                    // });
                     
-                    // Animate menu items
+                    // Animate menu items only once
                     animateMenuItems(targetSection);
                 }, 100);
             }
@@ -61,6 +69,11 @@ function animateMenuItems(section) {
     const menuItems = section.querySelectorAll('.menu-item-card');
     
     menuItems.forEach((item, index) => {
+        // Check if item is already animated to prevent double animation
+        if (item.classList.contains('animated')) {
+            return;
+        }
+        
         // Make sure the item is displayed before animating
         item.style.display = '';
         item.style.opacity = '0';
@@ -70,6 +83,7 @@ function animateMenuItems(section) {
             item.style.transition = 'all 0.5s ease';
             item.style.opacity = '1';
             item.style.transform = 'translateY(0)';
+            item.classList.add('animated'); // Mark as animated
         }, index * 100);
     });
 }
